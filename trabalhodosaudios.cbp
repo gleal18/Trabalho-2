@@ -31,28 +31,28 @@
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
+		<Unit filename="Testes/teste0_basico.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="Testes/teste1_ganho.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="Testes/teste2_mistura.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="Testes/teste3_inverte.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="Testes/teste4_atraso.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="Testes/teste5_media.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="Testes/teste6_ecos.c">
+			<Option compilerVar="CC" />
+		</Unit>
 		<Unit filename="t2-RAdoDaniel-2883350.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="teste0_basico.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="teste1_ganho.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="teste2_mistura.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="teste3_inverte.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="teste4_atraso.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="teste5_media.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="teste6_ecos.c">
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="trabalho2.h" />
