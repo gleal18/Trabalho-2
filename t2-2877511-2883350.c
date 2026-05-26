@@ -15,7 +15,16 @@
 /*============================================================================*/
 /**                               Função 1                                    */
 
+void mudaGanho (double* dados, int n_amostras, double ganho) {
+        
+    int i;
 
+    // Multiplica cada dado pelo ganho.
+    for (i = 0; i < n_amostras; i++){
+        dados [i] = ganho * dados [i];
+    }
+
+}
 
 /*============================================================================*/
 /**                               Função 2                                    */
@@ -25,7 +34,20 @@
 /*============================================================================*/
 /**                               Função 3                                    */
 
+void inverteSinal (double* dados, int n_amostras) {
 
+    int i;
+    double aux; // Serve para ajudar na troca.
+
+    // Invertendo o vetor (trocando cada dado por seu simétrico).
+    for (i = 0; i < n_amostras / 2; i++){
+        aux = dados [i];
+        dados [i] = dados [(n_amostras - 1) - i];
+        dados [(n_amostras - 1) - i] = aux;
+        // Obs.: (n_amostras - 1) - i = "i máximo" - i.
+    }    
+
+}
 
 /*============================================================================*/
 /**                               Função 4                                    */
