@@ -31,9 +31,6 @@
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
-		<Unit filename="Funções/funcao1.c">
-			<Option compilerVar="CC" />
-		</Unit>
 		<Unit filename="data/teste0_basico.c">
 			<Option compilerVar="CC" />
 		</Unit>
