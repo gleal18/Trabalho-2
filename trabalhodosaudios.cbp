@@ -34,28 +34,28 @@
 		<Unit filename="Funções/funcao1.c">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="Testes/teste0_basico.c">
+		<Unit filename="data/teste0_basico.c">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="Testes/teste1_ganho.c">
+		<Unit filename="data/teste1_ganho.c">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="Testes/teste2_mistura.c">
+		<Unit filename="data/teste2_mistura.c">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="Testes/teste3_inverte.c">
+		<Unit filename="data/teste3_inverte.c">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="Testes/teste4_atraso.c">
+		<Unit filename="data/teste4_atraso.c">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="Testes/teste5_media.c">
+		<Unit filename="data/teste5_media.c">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="Testes/teste6_ecos.c">
+		<Unit filename="data/teste6_ecos.c">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="t2-RAdoDaniel-2883350.c">
+		<Unit filename="t2-2877511-2883350.c">
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="trabalho2.h" />
