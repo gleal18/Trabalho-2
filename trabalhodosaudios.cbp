@@ -31,29 +31,41 @@
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
-		<Unit filename="data/teste0_basico.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="data/teste1_ganho.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="data/teste2_mistura.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="data/teste3_inverte.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="data/teste4_atraso.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="data/teste5_media.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="data/teste6_ecos.c">
-			<Option compilerVar="CC" />
-		</Unit>
 		<Unit filename="t2-2877511-2883350.c">
 			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="teste0_basico.c">
+			<Option compilerVar="CC" />
+			<Option compile="0" />
+			<Option link="0" />
+		</Unit>
+		<Unit filename="teste1_ganho.c">
+			<Option compilerVar="CC" />
+			<Option compile="0" />
+			<Option link="0" />
+		</Unit>
+		<Unit filename="teste2_mistura.c">
+			<Option compilerVar="CC" />
+			<Option compile="0" />
+			<Option link="0" />
+		</Unit>
+		<Unit filename="teste3_inverte.c">
+			<Option compilerVar="CC" />
+			<Option compile="0" />
+			<Option link="0" />
+		</Unit>
+		<Unit filename="teste4_atraso.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="teste5_media.c">
+			<Option compilerVar="CC" />
+			<Option compile="0" />
+			<Option link="0" />
+		</Unit>
+		<Unit filename="teste6_ecos.c">
+			<Option compilerVar="CC" />
+			<Option compile="0" />
+			<Option link="0" />
 		</Unit>
 		<Unit filename="trabalho2.h" />
 		<Unit filename="wavfile.c">
