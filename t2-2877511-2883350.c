@@ -64,17 +64,31 @@ void inverteSinal (double* dados, int n_amostras) {
 
 void atrasaSinal (double* dados, int n_amostras, int atraso){
 
-    int i;
+    int i, aux;
     double *clone;
 
     clone = (double*) malloc(n_amostras * sizeof(double)); // Cria um vetor igual ao vetor "dados".
     for (i = 0; i < n_amostras; i++) // Loop para "clonar" o vetor "dados".
         clone[i] = dados[i];
-    for (i = 0; i < n_amostras; i++){
-        if (i < atraso)
-            dados[i] = 0;
-        else
-            dados[i] = clone[i - atraso];
+
+    if(atraso >= 0){
+        for (i = 0; i < n_amostras; i++){
+            if (i < atraso) // Preenche de zeros a parte inicial até o fim do atraso.
+                dados[i] = 0;
+            else  // Continua com o ínicio do áudio.
+                dados[i] = clone[i - atraso];
+        }
+    }
+    else{ // Quando atraso < 0
+        aux = n_amostras - 1;
+        for (i = n_amostras - 1; i >= 0 ; i--){
+            if(i > (n_amostras - 1 + atraso)) // Preenche de zeros a parte final até o fim do atraso.
+                dados[i] = 0;
+            else{ // Continua com o ínicio do áudio.
+                dados[i] = clone[aux]; // "aux" utilizada pois no fim do atraso, o vetor "clone" tem que começar na última posição.
+                aux--;
+            }
+        }
     }
     free(clone);
 }
