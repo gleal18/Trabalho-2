@@ -24,7 +24,7 @@ void mudaGanho (double* dados, int n_amostras, double ganho) {
 
     // Multiplica cada dado pelo ganho.
     for (i = 0; i < n_amostras; i++){
-        dados [i] = ganho * dados [i];
+        dados[i] = ganho * dados[i];
     }
 
 }
@@ -32,13 +32,16 @@ void mudaGanho (double* dados, int n_amostras, double ganho) {
 /*============================================================================*/
 /**                               Função 2                                    */
 
-void misturaDados (double* dados1, double* dados2, double* saida, int n_amostras) {
-
+void misturaDados(double* dados1, double* dados2, double* saida, int n_amostras)
+{
     int i;
 
-    for (i = 0; i < n_amostras; i++){ // Loop que acessa do ínicio ao fim dos vetores simultaneamente.
-        saida[i] = dados1[i] + dados2[i]; // Coloca a soma dos vetores deentrada dentro do vetor de saída.
+    // Loop que acessa do ínicio ao fim os vetores simultaneamente.
+    for (i = 0; i < n_amostras; i++){ 
+        // Coloca a soma dos vetores de entrada dentro do vetor de saída.
+        saida[i] = dados1[i] + dados2[i]; 
     }
+
 }
 
 /*============================================================================*/
@@ -51,9 +54,9 @@ void inverteSinal (double* dados, int n_amostras) {
 
     // Invertendo o vetor (trocando cada dado por seu simétrico).
     for (i = 0; i < n_amostras / 2; i++){
-        aux = dados [i];
-        dados [i] = dados [(n_amostras - 1) - i];
-        dados [(n_amostras - 1) - i] = aux;
+        aux = dados[i];
+        dados[i] = dados[(n_amostras - 1) - i];
+        dados[(n_amostras - 1) - i] = aux;
         // Obs.: (n_amostras - 1) - i = "i máximo" - i.
     }
 
@@ -62,12 +65,13 @@ void inverteSinal (double* dados, int n_amostras) {
 /*============================================================================*/
 /**                               Função 4                                    */
 
-void atrasaSinal (double* dados, int n_amostras, int atraso){
+void atrasaSinal (double* dados, int n_amostras, int atraso) {
 
     int i;
     double *clone;
 
-    clone = (double*) malloc(n_amostras * sizeof(double)); // Cria um vetor igual ao vetor "dados".
+    // Cria um vetor igual ao vetor "dados".
+    clone = (double*) malloc(n_amostras * sizeof(double)); 
     for (i = 0; i < n_amostras; i++) // Loop para "clonar" o vetor "dados".
         clone[i] = dados[i];
     for (i = 0; i < n_amostras; i++){
@@ -77,36 +81,41 @@ void atrasaSinal (double* dados, int n_amostras, int atraso){
             dados[i] = clone[i - atraso];
     }
     free(clone);
+
 }
 
 /*============================================================================*/
 /**                               Função 5                                    */
 
-//largura deve ser um número ímpar entre 3 e o número de amostras
-
-//[p-(largura-1)/2, p+(largura-1)/2].
-
 void filtroDaMedia (double* dados, int n_amostras, int largura) {
 
-    int p;
-    double *original;
+    int p, i;
+    double *original, soma;
 
-    original = (*double) malloc (n_amostras * sizeof(double));
+    // Se "largura" for um número ímpar entre 3 e n_amostras, segue a função. 
+    if (largura % 2 && largura >= 3 && largura <= n_amostras) {
 
-    // Cópia do vetor "dados".
-    for (p = 0; p < n_amostras; p++){
-        original [p] = dados [p];
+        original = (double*) malloc (n_amostras * sizeof(double));
+
+        // Cópia do vetor "dados".
+        for (p = 0; p < n_amostras; p++){
+            original[p] = dados[p];
+        }
+
+        // Percorre "dados" somente nas posições onde a média pode ser tirada.
+        for (p = (largura - 1) / 2; p + (largura - 1) / 2 < n_amostras; p++){
+            
+            soma = 0;
+            // Soma os dados originais no intervalo referente à posição "p".
+            for (i = p - (largura - 1) / 2; i <= p + (largura - 1) / 2; i++){
+                soma += original[i];
+            }
+            dados[p] = soma / largura; // Média.
+        }
+
+        free (original);
     }
-
-    p = 0;
-    while (p - (largura - 1) / 2 < 0){
-        p++;
-    }
-
     
-
-    free (original);
-
 }
 
 /*============================================================================*/
