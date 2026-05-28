@@ -57,7 +57,31 @@ void inverteSinal (double* dados, int n_amostras) {
 /*============================================================================*/
 /**                               Função 5                                    */
 
+//largura deve ser um número ímpar entre 3 e o número de amostras
 
+//[p-(largura-1)/2, p+(largura-1)/2].
+
+void filtroDaMedia (double* dados, int n_amostras, int largura) {
+
+    int p;
+    double *original;
+
+    original = (*double) malloc (n_amostras * sizeof(double));
+
+    // Cópia do vetor "dados".
+    for (p = 0; p < n_amostras; p++){
+        original [p] = dados [p];
+    }
+
+    p = 0;
+    while (p - (largura - 1) / 2 < 0){
+        p++;
+    }
+
+
+    free (original);
+
+}
 
 /*============================================================================*/
 /**                             Função Extra                                  */
