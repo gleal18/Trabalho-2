@@ -71,7 +71,7 @@ void atrasaSinal (double* dados, int n_amostras, int atraso){
     for (i = 0; i < n_amostras; i++) // Loop para "clonar" o vetor "dados".
         clone[i] = dados[i];
     for (i = 0; i < n_amostras; i++){
-        if (i < atraso) z
+        if (i < atraso)
             dados[i] = 0;
         else
             dados[i] = clone[i - atraso];
