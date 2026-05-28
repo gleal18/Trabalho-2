@@ -1,5 +1,33 @@
-audios/
-data/
+# === ARQUIVOS DE BASE E TESTES (JÁ ENVIADOS / FIXOS) ===
+teste0_basico.c
+teste1_ganho.c
+teste2_mistura.c
+teste3_inverte.c
+teste4_atraso.c
+teste5_media.c
+teste6_ecos.c
+wavfile.c
+wavfile.h
 trabalho2.h
-wavfile*
 
+# === PASTAS DE ÁUDIO E DADOS (COISAS CONSTANTES) ===
+data/
+audios/
+
+# === ARQUIVOS DE CONFIGURAÇÃO DO CODE::BLOCKS ===
+*.cbp
+*.layout
+*.depend
+*.gch
+
+# === PASTAS DE COMPILAÇÃO DO CODE::BLOCKS ===
+bin/
+obj/
+
+# === ARQUIVOS EXECUTÁVEIS SOLTOS (SEM EXTENSÃO) ===
+# Ignora os executáveis gerados na raiz para não poluírem o Git
+/trabalho2
+/wavfile
+
+# === CONFIGURAÇÕES DO VS CODE DO SEU AMIGO ===
+.vscode/
