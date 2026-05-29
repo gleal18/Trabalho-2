@@ -37,9 +37,9 @@ void misturaDados(double* dados1, double* dados2, double* saida, int n_amostras)
     int i;
 
     // Loop que acessa do ínicio ao fim os vetores simultaneamente.
-    for (i = 0; i < n_amostras; i++){ 
+    for (i = 0; i < n_amostras; i++){
         // Coloca a soma dos vetores de entrada dentro do vetor de saída.
-        saida[i] = dados1[i] + dados2[i]; 
+        saida[i] = dados1[i] + dados2[i];
     }
 
 }
@@ -71,7 +71,7 @@ void atrasaSinal (double* dados, int n_amostras, int atraso) {
     double *clone;
 
     // Cria um vetor igual ao vetor "dados".
-    clone = (double*) malloc(n_amostras * sizeof(double)); 
+    clone = (double*) malloc(n_amostras * sizeof(double));
     for (i = 0; i < n_amostras; i++) // Loop para "clonar" o vetor "dados".
         clone[i] = dados[i];
 
@@ -106,7 +106,7 @@ void filtroDaMedia (double* dados, int n_amostras, int largura) {
     int p, i;
     double *original, soma;
 
-    // Se "largura" for um número ímpar entre 3 e n_amostras, segue a função. 
+    // Se "largura" for um número ímpar entre 3 e n_amostras, segue a função.
     if (largura % 2 && largura >= 3 && largura <= n_amostras) {
 
         original = (double*) malloc (n_amostras * sizeof(double));
@@ -118,7 +118,7 @@ void filtroDaMedia (double* dados, int n_amostras, int largura) {
 
         // Percorre "dados" somente nas posições onde a média pode ser tirada.
         for (p = (largura - 1) / 2; p + (largura - 1) / 2 < n_amostras; p++){
-            
+
             soma = 0;
             // Soma os dados originais no intervalo referente à posição "p".
             for (i = p - (largura - 1) / 2; i <= p + (largura - 1) / 2; i++){
@@ -129,12 +129,29 @@ void filtroDaMedia (double* dados, int n_amostras, int largura) {
 
         free (original);
     }
-    
+
 }
 
 /*============================================================================*/
 /**                             Função Extra                                  */
 
+void ecos (double* dados, int n_amostras, int n_repeticoes, int atraso, int abafamento, double decaimento) {
 
+    int i;
+    double *clone;
+
+    // "Clona" o vetor "dados".
+    clone = (double*) malloc(n_amostras * sizeof(double));
+    for (i = 0; i < n_amostras; i++)
+        clone[i] = dados[i];
+
+    // Aplica todos os efeitos das funções anteriores para gerar o eco.
+    for (i= 0; i < n_repeticoes; i++) {
+        atrasaSinal (clone, n_amostras, atraso);
+        filtroDaMedia (clone, n_amostras, abafamento);
+        mudaGanho (clone, n_amostras, decaimento);
+        misturaDados(dados, clone, dados, n_amostras);
+    }
+}
 
 /*============================================================================*/

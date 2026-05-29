@@ -12,7 +12,6 @@ trabalho2.h
 
 # === PASTAS DE ÁUDIO E DADOS (COISAS CONSTANTES) ===
 data/
-audios/
 
 # === ARQUIVOS DE CONFIGURAÇÃO DO CODE::BLOCKS ===
 *.cbp
